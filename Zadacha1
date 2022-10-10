@@ -1,0 +1,29 @@
+#include "pt4.h"
+#include <iostream>
+#include "math.h"
+
+bool IsSquare(int K)
+{
+for (int i = 1; i <= sqrt(K); ++i) {
+if (i == sqrt(K)) return true;
+else if (i > sqrt(K)) return false;
+}
+}
+
+
+
+void Solve()
+{
+Task("Proc25");
+int n = 0;
+int num = 0;
+int K;
+bool q;
+while (n < 10) {
+pt » K;
+q = IsSquare(K);
+if (q == true) num++;
+++n;
+}
+pt « num;
+}
