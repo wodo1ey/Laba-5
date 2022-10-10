@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
+float ln1(float x, float e) {
+	float ln1_n = x, rez = 0;
+	int i = 0;
+
+	while (fabs(ln1_n / (i + 1)) > e) {
+		rez += ln1_n / (i + 1);
+		++i;
+		ln1_n *= -x / (i + 1);
+	}
+	return rez;
+}
+
+void main()
+{
+	float x, e;
+	cout << "X: ";
+	cin >> x;
+	int i;
+	for (i = 1; i <= 6; ++i) {
+		cout << "E: ";
+		cin >> e;
+		cout << ln1(x, e) << endl;
+	}
+}
