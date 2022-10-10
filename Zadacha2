@@ -1,0 +1,20 @@
+#include "pt4.h"
+using namespace std;
+
+void swap(float* x, float* y) {
+	float t;
+	t = *x;
+	*x = *y;
+	*y = t;
+
+}
+void Solve()
+{
+	Task("Proc10");
+	float a, b, c, d;
+	pt >> a >> b >> c >> d;
+	swap(&a, &b);
+	swap(&c, &d);
+	swap(&b, &c);
+	pt << a << b << c << d;
+}
